@@ -12,4 +12,4 @@ execute:
 library(tidyverse)
 ```
 
-There is an mix of a certain number of red and white beads with varying sizes in an urn of 1,000 beads. The data comes from an experiment simulating the urn, and there is a specific proportion of red beads to the total number of beads.
+There is an mix of a certain number of red and white beads with varying sizes in an urn of 1,000 beads. The data comes from an experiment simulating the urn, and there is a specific proportion of red beads to the total number of beads. The beads at the top, which the shovel can reach easily, might not be a good representative of a sample size.
