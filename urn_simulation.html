@@ -99,35 +99,37 @@ window.Quarto = {
 </header>
 
 
+<p><strong>Logistic Model Formula</strong></p>
 <p><span class="math display">\[
 \log\left(\frac{\mathbb{P}(Y=1)}{1 - \mathbb{P}(Y=1)}\right) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_p X_p
 \]</span></p>
+<p><strong>Evalutated</strong></p>
 <p><span class="math display">\[
 \log\left(\frac{\hat{\mathbb{P}}(Y=1)}{1 - \hat{\mathbb{P}}(Y=1)}\right) = -0.6633 + 0.5421 \cdot \text{shovel\_size} - 0.2314 \cdot \text{color\_intensity}
 \]</span></p>
+<p><strong>Converted to Probability</strong></p>
 <p><span class="math display">\[
 \hat{\mathbb{P}}(Y=1) = \frac{1}{1 + e^{-(-0.6633 + 0.5421 \cdot \text{shovel\_size} - 0.2314 \cdot \text{color\_intensity})}}
 \]</span></p>
-<p>There is an mix of a certain number of red and white beads with varying sizes in an urn of 1,000 beads. The data comes from an experiment simulating the urn, and there is a specific proportion of red beads to the total number of beads. The beads at the top, which the shovel can reach easily, might not be a good representative of a sample size.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="krhpdekdsf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#krhpdekdsf table {
+<div id="qecebzukqf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qecebzukqf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#krhpdekdsf thead, #krhpdekdsf tbody, #krhpdekdsf tfoot, #krhpdekdsf tr, #krhpdekdsf td, #krhpdekdsf th {
+#qecebzukqf thead, #qecebzukqf tbody, #qecebzukqf tfoot, #qecebzukqf tr, #qecebzukqf td, #qecebzukqf th {
   border-style: none;
 }
 
-#krhpdekdsf p {
+#qecebzukqf p {
   margin: 0;
   padding: 0;
 }
 
-#krhpdekdsf .gt_table {
+#qecebzukqf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -153,12 +155,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#krhpdekdsf .gt_caption {
+#qecebzukqf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#krhpdekdsf .gt_title {
+#qecebzukqf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -170,7 +172,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#krhpdekdsf .gt_subtitle {
+#qecebzukqf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -182,7 +184,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#krhpdekdsf .gt_heading {
+#qecebzukqf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -194,13 +196,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#krhpdekdsf .gt_bottom_border {
+#qecebzukqf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#krhpdekdsf .gt_col_headings {
+#qecebzukqf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -215,7 +217,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#krhpdekdsf .gt_col_heading {
+#qecebzukqf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -235,7 +237,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#krhpdekdsf .gt_column_spanner_outer {
+#qecebzukqf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -247,15 +249,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#krhpdekdsf .gt_column_spanner_outer:first-child {
+#qecebzukqf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#krhpdekdsf .gt_column_spanner_outer:last-child {
+#qecebzukqf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#krhpdekdsf .gt_column_spanner {
+#qecebzukqf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -267,11 +269,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#krhpdekdsf .gt_spanner_row {
+#qecebzukqf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#krhpdekdsf .gt_group_heading {
+#qecebzukqf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -297,7 +299,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#krhpdekdsf .gt_empty_group_heading {
+#qecebzukqf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -312,15 +314,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#krhpdekdsf .gt_from_md > :first-child {
+#qecebzukqf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#krhpdekdsf .gt_from_md > :last-child {
+#qecebzukqf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#krhpdekdsf .gt_row {
+#qecebzukqf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -339,7 +341,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#krhpdekdsf .gt_stub {
+#qecebzukqf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -352,7 +354,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#krhpdekdsf .gt_stub_row_group {
+#qecebzukqf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -366,15 +368,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#krhpdekdsf .gt_row_group_first td {
+#qecebzukqf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#krhpdekdsf .gt_row_group_first th {
+#qecebzukqf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#krhpdekdsf .gt_summary_row {
+#qecebzukqf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -384,16 +386,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#krhpdekdsf .gt_first_summary_row {
+#qecebzukqf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#krhpdekdsf .gt_first_summary_row.thick {
+#qecebzukqf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#krhpdekdsf .gt_last_summary_row {
+#qecebzukqf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -403,7 +405,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#krhpdekdsf .gt_grand_summary_row {
+#qecebzukqf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -413,7 +415,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#krhpdekdsf .gt_first_grand_summary_row {
+#qecebzukqf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -423,7 +425,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#krhpdekdsf .gt_last_grand_summary_row_top {
+#qecebzukqf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -433,11 +435,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#krhpdekdsf .gt_striped {
+#qecebzukqf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#krhpdekdsf .gt_table_body {
+#qecebzukqf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -446,7 +448,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#krhpdekdsf .gt_footnotes {
+#qecebzukqf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -460,7 +462,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#krhpdekdsf .gt_footnote {
+#qecebzukqf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -469,7 +471,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#krhpdekdsf .gt_sourcenotes {
+#qecebzukqf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -483,7 +485,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#krhpdekdsf .gt_sourcenote {
+#qecebzukqf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -491,72 +493,72 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#krhpdekdsf .gt_left {
+#qecebzukqf .gt_left {
   text-align: left;
 }
 
-#krhpdekdsf .gt_center {
+#qecebzukqf .gt_center {
   text-align: center;
 }
 
-#krhpdekdsf .gt_right {
+#qecebzukqf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#krhpdekdsf .gt_font_normal {
+#qecebzukqf .gt_font_normal {
   font-weight: normal;
 }
 
-#krhpdekdsf .gt_font_bold {
+#qecebzukqf .gt_font_bold {
   font-weight: bold;
 }
 
-#krhpdekdsf .gt_font_italic {
+#qecebzukqf .gt_font_italic {
   font-style: italic;
 }
 
-#krhpdekdsf .gt_super {
+#qecebzukqf .gt_super {
   font-size: 65%;
 }
 
-#krhpdekdsf .gt_footnote_marks {
+#qecebzukqf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#krhpdekdsf .gt_asterisk {
+#qecebzukqf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#krhpdekdsf .gt_indent_1 {
+#qecebzukqf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#krhpdekdsf .gt_indent_2 {
+#qecebzukqf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#krhpdekdsf .gt_indent_3 {
+#qecebzukqf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#krhpdekdsf .gt_indent_4 {
+#qecebzukqf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#krhpdekdsf .gt_indent_5 {
+#qecebzukqf .gt_indent_5 {
   text-indent: 25px;
 }
 
-#krhpdekdsf .katex-display {
+#qecebzukqf .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#krhpdekdsf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qecebzukqf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -589,12 +591,27 @@ window.Quarto = {
 <td class="gt_row gt_right" headers="conf.low">0.09226204</td>
 <td class="gt_row gt_right" headers="conf.high">1.271181</td>
 </tr>
-</tbody>
+</tbody><tfoot class="gt_sourcenotes">
+<tr class="odd">
+<td colspan="7" class="gt_sourcenote">Source: Logistic regression estimates from a shovel sample of beads drawn from an urn</td>
+</tr>
+</tfoot>
+
 </table>
 
 </div>
 </div>
 </div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="urn_simulation_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>There is an mix of a certain number of red and white beads with varying sizes in an urn of 1,000 beads. The data comes from an experiment simulating the urn, and there is a specific proportion of red beads to the total number of beads. The beads at the top, which the shovel can reach easily, might not be a good representative of a sample size. I model the probability that a bead is red, which takes values red or white, as a logistic function of the shovel sample data. The estimated average proportion of red beads is around 34%, and the true proportion for a 95% confidence interval is around 21% to 47%.</p>
 
 </main>
 <!-- /main column -->

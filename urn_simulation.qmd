@@ -12,22 +12,26 @@ execute:
 library(tidyverse)
 library(tidymodels)
 library(broom)
+library(marginaleffects)
 ```
+
+**Logistic Model Formula**
 
 $$
 \log\left(\frac{\mathbb{P}(Y=1)}{1 - \mathbb{P}(Y=1)}\right) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_p X_p
 $$
 
+**Evalutated**
+
 $$
 \log\left(\frac{\hat{\mathbb{P}}(Y=1)}{1 - \hat{\mathbb{P}}(Y=1)}\right) = -0.6633 + 0.5421 \cdot \text{shovel\_size} - 0.2314 \cdot \text{color\_intensity}
 $$
 
+**Converted to Probability**
+
 $$
 \hat{\mathbb{P}}(Y=1) = \frac{1}{1 + e^{-(-0.6633 + 0.5421 \cdot \text{shovel\_size} - 0.2314 \cdot \text{color\_intensity})}}
 $$
-
-
-There is an mix of a certain number of red and white beads with varying sizes in an urn of 1,000 beads. The data comes from an experiment simulating the urn, and there is a specific proportion of red beads to the total number of beads. The beads at the top, which the shovel can reach easily, might not be a good representative of a sample size.
 
 ```{r}
 shovel <- tibble(
@@ -59,5 +63,31 @@ tidy_output %>%
   tab_header(
     title = "Logistic Regression Coefficients",
     subtitle = "Includes Confidence Intervals"
+  ) %>%
+  tab_source_note(
+    source_note = "Source: Logistic regression estimates from a shovel sample of beads drawn from an urn"
   )
 ```
+
+```{r}
+plot_predictions(fit_color,
+                 type = "prob",
+                 condition = "group") +
+  labs(
+    title = "Predicted Probability of Bead Color in Shovel Samples",
+    subtitle = "Based on Logistic Regression Model",
+    x = "Bead Color",
+    y = "Predicted Probability",
+    caption = "Data source: Shovel sampling from urn beads experiment"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18),
+    plot.subtitle = element_text(size = 14, color = "gray40"),
+    axis.title = element_text(face = "bold"),
+    plot.caption = element_text(face = "italic", size = 10, color = "gray60"),
+    legend.position = "none"
+  )
+```
+
+There is an mix of a certain number of red and white beads with varying sizes in an urn of 1,000 beads. The data comes from an experiment simulating the urn, and there is a specific proportion of red beads to the total number of beads. The beads at the top, which the shovel can reach easily, might not be a good representative of a sample size. I model the probability that a bead is red, which takes values red or white, as a logistic function of the shovel sample data. The estimated average proportion of red beads is around 34%, and the true proportion for a 95% confidence interval is around 21% to 47%.
