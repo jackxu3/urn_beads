@@ -10,6 +10,54 @@ execute:
 ```{r}
 #| message: false
 library(tidyverse)
+library(tidymodels)
+library(broom)
 ```
 
+$$
+\log\left(\frac{\mathbb{P}(Y=1)}{1 - \mathbb{P}(Y=1)}\right) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_p X_p
+$$
+
+$$
+\log\left(\frac{\hat{\mathbb{P}}(Y=1)}{1 - \hat{\mathbb{P}}(Y=1)}\right) = -0.6633 + 0.5421 \cdot \text{shovel\_size} - 0.2314 \cdot \text{color\_intensity}
+$$
+
+$$
+\hat{\mathbb{P}}(Y=1) = \frac{1}{1 + e^{-(-0.6633 + 0.5421 \cdot \text{shovel\_size} - 0.2314 \cdot \text{color\_intensity})}}
+$$
+
+
 There is an mix of a certain number of red and white beads with varying sizes in an urn of 1,000 beads. The data comes from an experiment simulating the urn, and there is a specific proportion of red beads to the total number of beads. The beads at the top, which the shovel can reach easily, might not be a good representative of a sample size.
+
+```{r}
+shovel <- tibble(
+  color = factor(c(
+    "red", "white", "white", "red", "red", "white", "white", "white", "white", "white",
+    "white", "white", "white", "red", "red", "red", "white", "white", "red", "white",
+    "white", "white", "white", "white", "red", "white", "red", "white", "red", "white",
+    "white", "red", "red", "white", "white", "white", "white", "white", "white", "white",
+    "red", "red", "red", "white", "white", "red", "white", "red", "white", "white"
+  ))
+)
+```
+
+```{r}
+#| cache: true
+fit_color <- logistic_reg(engine = "glm") %>%
+  fit(color ~ 1, data = shovel)
+```
+
+```{r}
+# Create the tidy output with confidence intervals
+library(broom)
+tidy_output <- tidy(fit_color, conf.int = TRUE)
+
+# Option 2: Using the gt package for a more styled table
+library(gt)
+tidy_output %>%
+  gt() %>%
+  tab_header(
+    title = "Logistic Regression Coefficients",
+    subtitle = "Includes Confidence Intervals"
+  )
+```
